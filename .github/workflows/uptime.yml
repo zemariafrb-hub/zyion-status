@@ -1,0 +1,23 @@
+name: Uptime CI
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+jobs:
+  uptime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upptime
+        uses: upptime/uptime-monitor@master
+        with:
+          GRAPHS_CI: "true"
+          LOGS_CI: "true"
+          RESPONSE_TIME_CI: "true"
+          STATUS_WEBSITE_CI: "true"
+          SUMMARY_CI: "true"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SECRETS_CI: ${{ secrets.SECRETS_CI }}

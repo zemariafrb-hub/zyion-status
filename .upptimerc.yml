@@ -1,0 +1,30 @@
+owner: zemariafrb-hub
+repo: zyion-status
+userAgent: zyion-status
+sites:
+  - name: ZYION App
+    url: https://zyion.com.br
+    expectedStatusCodes:
+      - 200
+      - 301
+      - 302
+  - name: ZYION API
+    url: https://zyion.com.br/api/health
+    expectedStatusCodes:
+      - 200
+  - name: Supabase
+    url: https://xcqxptajcvfzvpauweqe.supabase.co/rest/v1/
+    expectedStatusCodes:
+      - 200
+      - 401
+status-website:
+  cname: status.zyion.com.br
+  logoUrl: https://zyion.com.br/favicon.ico
+  name: ZYION Status
+  introTitle: "Status dos Serviços ZYION"
+  introMessage: "Monitoramento em tempo real de todos os serviços da plataforma ZYION."
+  navbar:
+    - title: ZYION
+      href: https://zyion.com.br
+i18n:
+  footer: Powered by <a href="https://upptime.js.org" rel="noopener noreferrer" target="_blank">Upptime</a>

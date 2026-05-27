@@ -1,0 +1,19 @@
+name: Response Time Graph
+on:
+  workflow_run:
+    workflows: ["Uptime CI"]
+    types:
+      - completed
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+jobs:
+  response-time-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update graphs
+        uses: upptime/uptime-monitor@master
+        with:
+          GRAPHS_CI: "true"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
